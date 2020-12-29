@@ -39,7 +39,7 @@ class exceltoDBtable:
             # self.conn = pymysql.connect(host=self.server,user=self.usrID,password=self.pwd,db=self.database,charset="utf8",cursorclass=pymysql.cursors.DictCursor)
             
             self.engine = create_engine('mysql+pymysql://%s:%s@%s:3306/%s'%(self.usrID,self.pwd,self.server,self.database))
-            print("Secessfully connected to mysql...")
+            print("Successfully connected to MySQL...")
         except:
             raise Exception("Can not connect to %s, please check your input info."%self.dbType)
 
@@ -63,7 +63,7 @@ class exceltoDBtable:
                 tableName = self.filePath.split(".")[0]
         try:
             self.file_data.to_sql(tableName,con=self.engine)
-            print("Successfully save data into database")
+            print("Successfully save %s into database..."%tableName)
         except Exception as e:
             raise Exception(e)
 

@@ -1,6 +1,6 @@
 # Introduction
 
-This package help to convert your excel files (xlsx,xls,csv) to Mysql database.
+This package help to convert your excel files (xlsx,xls,csv) to MySQL Server database.
 
 # Installation
 
@@ -9,35 +9,44 @@ exceltomysql can be installed as:
 Windows:
 
 ```python
-pip install esceltomysql
+pip install exceltomysql
 ```
 
 # Dependency
 
 👍   [pandas](https://pandas.pydata.org/)
 
-👍   [pymysql](https://github.com/PyMySQL/PyMySQL/)
+👍   [pymysql](http://www.pymssql.org/)
 
 👍   [sqlalchemy](https://www.sqlalchemy.org/)
-
-# Reslase History
-
-`0.1`
 
 # QuickStart
 
 ```python
-import exceltomysql
-
+import exceltomysq as em
 # generate the class instance
 
+# STEP One, prepare your input pareameters
+
 yourFile  = "test01.xls"  # available for xlsx, xls,csv
-yourHost  = "localhost"   # you need to change your host if needed
 yourUsrID = ""
 yourPWD   = ""
 yourDBname= ""
+save2tableName = False  # save your file name table name onto MySQL Server or A string like: "test"
 
-exceltomysql(yourFile,yourHose,yourUsrID,yourPWD,yourDBname)
+# get your local host name
+# this will return your local computer name for your MySQL server database
+host_name = em.hostname   
+
+# get your local ip address 
+# this will return your local ip address (if your sql server can be accessed by DNS)
+ip = em.local_ip  
+
+yourHostORip  = "localhost"   # you need to change your host if needed, dns: local ip address
+
+
+# STEP Two  convert your data to sql server
+em.exceltoDBtable(yourFile,yourHoseORip,yourUsrID,yourPWD,yourDBname,save2tableName)
 
 
 ```
@@ -45,20 +54,17 @@ exceltomysql(yourFile,yourHose,yourUsrID,yourPWD,yourDBname)
 ```python
 output:
 Successfully load excel data...
-Secessfully connected to mysql...
-Successfully save data into database
+Secessfully connected to MySQL Server...
+Secessfully saved 'yourtable' into SQL Server...
 ```
-
-
 
 # API Reference
 
-exceltomysql(`filePath,server=False,usrID =False,pwd=False,database=False,save2tableName`)
+exceltosqlserver.exceltoDBtable(`filePath,hostORip=False,usrID =False,pwd=False,database=False,save2tableName`)
 
+filePath: str
 
-filePath:
-
-strserver: str  default :False
+hostORip: str  default :False
 
 usrID: str  default: False
 
