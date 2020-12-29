@@ -1,0 +1,6 @@
+README.md
+setup.py
+exceltomysql.egg-info/PKG-INFO
+exceltomysql.egg-info/SOURCES.txt
+exceltomysql.egg-info/dependency_links.txt
+exceltomysql.egg-info/top_level.txt
