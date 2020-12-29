@@ -20,7 +20,7 @@ except:
 
 setuptools.setup(
     name="exceltomysql", # Replace with your own username
-    version="0.1.1",
+    version="0.1.2",
     author="Xiangyong Luo",
     author_email="rochemay@163.com",
     description="This package help to convert your excel files (xlsx,xls,csv) to MySQL database.",

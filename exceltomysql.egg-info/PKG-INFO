@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: exceltomysql
-Version: 0.1.1
+Version: 0.1.2
 Summary: This package help to convert your excel files (xlsx,xls,csv) to MySQL database.
 Home-page: https://github.com/Xiangyongluo/exceltomysql
 Author: Xiangyong Luo
@@ -17,7 +17,7 @@ Description: # Introduction
         Windows:
         
         ```python
-        pip install esceltomysql
+        pip install exceltomysql
         ```
         
         # Dependency

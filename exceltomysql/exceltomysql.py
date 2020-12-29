@@ -11,6 +11,10 @@ import pymysql
 import pyodbc
 from sqlalchemy import create_engine
 
+import socket
+
+hostname = socket.gethostname()
+local_ip = socket.gethostbyname(hostname)
 
 
 # Pandas to sql need to use sqlalcemy to create engine
