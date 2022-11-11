@@ -23,29 +23,33 @@ local_ip = socket.gethostbyname(hostname)
 class exceltoDBtable:
     #  Available for sql server and mysql now
     def __init__(self,filePath,server=False,usrID =False,pwd=False,database=False,save2tableName=False):
-        if not any([server,database,usrID,pwd]):
+        if not any([server, database, usrID, pwd]):
             raise Exception("Partially inputs, please check your inputs...")
-        else:
-            self.filePath = filePath
-            self.server = server
-            self.database=database
-            self.usrID = usrID
-            self.pwd = pwd
-            self.save2tableName = save2tableName
+        self.filePath = filePath
+        self.server = server
+        self.database=database
+        self.usrID = usrID
+        self.pwd = pwd
+        self.save2tableName = save2tableName
         self.dbType = ["mysql","sqlserver"]
         self.readData()
         self.connect2DB()
         self.save2database()
 
     def connect2DB(self) -> "Connect to Database Server":
-    
+
         try:
             # self.conn = pymysql.connect(host=self.server,user=self.usrID,password=self.pwd,db=self.database,charset="utf8",cursorclass=pymysql.cursors.DictCursor)
-            
-            self.engine = create_engine('mysql+pymysql://%s:%s@%s:3306/%s'%(self.usrID,self.pwd,self.server,self.database))
+
+            self.engine = create_engine(
+                f'mysql+pymysql://{self.usrID}:{self.pwd}@{self.server}:3306/{self.database}'
+            )
+
             print("Successfully connected to MySQL...")
         except:
-            raise Exception("Can not connect to %s, please check your input info."%self.dbType)
+            raise Exception(
+                f"Can not connect to {self.dbType}, please check your input info."
+            )
 
     def readData(self) -> "DataFrame":
         if self.filePath.split(".")[-1] in ["xlsx","xls"]:
@@ -57,17 +61,16 @@ class exceltoDBtable:
         else:
             raise Exception("Unable to load input file...")
 
-    def save2database(self) ->"DataFrame to database":
+    def save2database(self) -> "DataFrame to database":
         if self.save2tableName:
             tableName = self.save2tableName
+        elif "/" in self.filePath:
+            tableName = self.filePath.split("/")[-1].split(".")[0]
         else:
-            if "/" in self.filePath:
-                tableName = self.filePath.split("/")[-1].split(".")[0]
-            else:
-                tableName = self.filePath.split(".")[0]
+            tableName = self.filePath.split(".")[0]
         try:
             self.file_data.to_sql(tableName,con=self.engine)
-            print("Successfully save %s into database..."%tableName)
+            print(f"Successfully save {tableName} into database...")
         except Exception as e:
             raise Exception(e)
 
