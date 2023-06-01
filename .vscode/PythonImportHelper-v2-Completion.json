@@ -1,0 +1,117 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "pymysql",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pymysql",
+        "description": "pymysql",
+        "detail": "pymysql",
+        "documentation": {}
+    },
+    {
+        "label": "pyodbc",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyodbc",
+        "description": "pyodbc",
+        "detail": "pyodbc",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "setuptools",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "setuptools",
+        "description": "setuptools",
+        "detail": "setuptools",
+        "documentation": {}
+    },
+    {
+        "label": "exceltoDBtable",
+        "kind": 6,
+        "importPath": "build.lib.exceltomysql.exceltomysql",
+        "description": "build.lib.exceltomysql.exceltomysql",
+        "peekOfCode": "class exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,filePath,server=False,usrID =False,pwd=False,database=False,save2tableName=False):\n        if not any([server,database,usrID,pwd]):\n            raise Exception(\"Partially inputs, please check your inputs...\")\n        else:\n            self.filePath = filePath\n            self.server = server\n            self.database=database\n            self.usrID = usrID",
+        "detail": "build.lib.exceltomysql.exceltomysql",
+        "documentation": {}
+    },
+    {
+        "label": "hostname",
+        "kind": 5,
+        "importPath": "build.lib.exceltomysql.exceltomysql",
+        "description": "build.lib.exceltomysql.exceltomysql",
+        "peekOfCode": "hostname = socket.gethostname()\nlocal_ip = socket.gethostbyname(hostname)\n# Pandas to sql need to use sqlalcemy to create engine\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,filePath,server=False,usrID =False,pwd=False,database=False,save2tableName=False):\n        if not any([server,database,usrID,pwd]):\n            raise Exception(\"Partially inputs, please check your inputs...\")\n        else:\n            self.filePath = filePath",
+        "detail": "build.lib.exceltomysql.exceltomysql",
+        "documentation": {}
+    },
+    {
+        "label": "local_ip",
+        "kind": 5,
+        "importPath": "build.lib.exceltomysql.exceltomysql",
+        "description": "build.lib.exceltomysql.exceltomysql",
+        "peekOfCode": "local_ip = socket.gethostbyname(hostname)\n# Pandas to sql need to use sqlalcemy to create engine\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,filePath,server=False,usrID =False,pwd=False,database=False,save2tableName=False):\n        if not any([server,database,usrID,pwd]):\n            raise Exception(\"Partially inputs, please check your inputs...\")\n        else:\n            self.filePath = filePath\n            self.server = server",
+        "detail": "build.lib.exceltomysql.exceltomysql",
+        "documentation": {}
+    },
+    {
+        "label": "exceltoDBtable",
+        "kind": 6,
+        "importPath": "exceltomysql.exceltomysql",
+        "description": "exceltomysql.exceltomysql",
+        "peekOfCode": "class exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,\n                 filePath: str,\n                 server: str = \"\",\n                 usrID: str = \"\",\n                 pwd: str = \"\",\n                 database: str = \"\",\n                 rename_table: str = \"\"):\n        if not any([server, database, usrID, pwd]):",
+        "detail": "exceltomysql.exceltomysql",
+        "documentation": {}
+    },
+    {
+        "label": "hostname",
+        "kind": 5,
+        "importPath": "exceltomysql.exceltomysql",
+        "description": "exceltomysql.exceltomysql",
+        "peekOfCode": "hostname = socket.gethostname()\nlocal_ip = socket.gethostbyname(hostname)\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,\n                 filePath: str,\n                 server: str = \"\",\n                 usrID: str = \"\",\n                 pwd: str = \"\",\n                 database: str = \"\",",
+        "detail": "exceltomysql.exceltomysql",
+        "documentation": {}
+    },
+    {
+        "label": "local_ip",
+        "kind": 5,
+        "importPath": "exceltomysql.exceltomysql",
+        "description": "exceltomysql.exceltomysql",
+        "peekOfCode": "local_ip = socket.gethostbyname(hostname)\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,\n                 filePath: str,\n                 server: str = \"\",\n                 usrID: str = \"\",\n                 pwd: str = \"\",\n                 database: str = \"\",\n                 rename_table: str = \"\"):",
+        "detail": "exceltomysql.exceltomysql",
+        "documentation": {}
+    }
+]
