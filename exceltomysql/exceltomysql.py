@@ -50,7 +50,7 @@ class exceltoDBtable:
             raise Exception("Can not connect to MySQL, please check your input info.")
 
     def readData(self) -> None:
-        if self.filePath.split(".")[-1] in ["xlsx","xls"]:
+        if self.filePath.split(".")[-1] in ["xlsx", "xls"]:
             self.file_data = pd.read_excel(self.filePath)
             print("Successfully load excel data...")
         elif self.filePath.split(".")[-1] in ["csv"]:
@@ -72,6 +72,3 @@ class exceltoDBtable:
             print("Successfully save %s into database..." % tableName)
         except Exception as e:
             raise Exception(e)
-
-
-
