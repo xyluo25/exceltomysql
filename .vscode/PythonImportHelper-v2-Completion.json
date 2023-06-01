@@ -1,5 +1,14 @@
 [
     {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
         "label": "pandas",
         "kind": 6,
         "isExtraImport": true,
@@ -43,12 +52,11 @@
         "documentation": {}
     },
     {
-        "label": "socket",
-        "kind": 6,
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
         "isExtraImport": true,
-        "importPath": "socket",
-        "description": "socket",
-        "detail": "socket",
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
@@ -63,9 +71,36 @@
     {
         "label": "exceltoDBtable",
         "kind": 6,
+        "importPath": "build.bdist.win-amd64.wheel.exceltomysql.exceltomysql",
+        "description": "build.bdist.win-amd64.wheel.exceltomysql.exceltomysql",
+        "peekOfCode": "class exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,\n                 filePath: str,\n                 server: str = \"\",\n                 usrID: str = \"\",\n                 pwd: str = \"\",\n                 database: str = \"\",\n                 rename_table: str = \"\"):\n        if not any([server, database, usrID, pwd]):",
+        "detail": "build.bdist.win-amd64.wheel.exceltomysql.exceltomysql",
+        "documentation": {}
+    },
+    {
+        "label": "hostname",
+        "kind": 5,
+        "importPath": "build.bdist.win-amd64.wheel.exceltomysql.exceltomysql",
+        "description": "build.bdist.win-amd64.wheel.exceltomysql.exceltomysql",
+        "peekOfCode": "hostname = socket.gethostname()\nlocal_ip = socket.gethostbyname(hostname)\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,\n                 filePath: str,\n                 server: str = \"\",\n                 usrID: str = \"\",\n                 pwd: str = \"\",\n                 database: str = \"\",",
+        "detail": "build.bdist.win-amd64.wheel.exceltomysql.exceltomysql",
+        "documentation": {}
+    },
+    {
+        "label": "local_ip",
+        "kind": 5,
+        "importPath": "build.bdist.win-amd64.wheel.exceltomysql.exceltomysql",
+        "description": "build.bdist.win-amd64.wheel.exceltomysql.exceltomysql",
+        "peekOfCode": "local_ip = socket.gethostbyname(hostname)\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,\n                 filePath: str,\n                 server: str = \"\",\n                 usrID: str = \"\",\n                 pwd: str = \"\",\n                 database: str = \"\",\n                 rename_table: str = \"\"):",
+        "detail": "build.bdist.win-amd64.wheel.exceltomysql.exceltomysql",
+        "documentation": {}
+    },
+    {
+        "label": "exceltoDBtable",
+        "kind": 6,
         "importPath": "build.lib.exceltomysql.exceltomysql",
         "description": "build.lib.exceltomysql.exceltomysql",
-        "peekOfCode": "class exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,filePath,server=False,usrID =False,pwd=False,database=False,save2tableName=False):\n        if not any([server,database,usrID,pwd]):\n            raise Exception(\"Partially inputs, please check your inputs...\")\n        else:\n            self.filePath = filePath\n            self.server = server\n            self.database=database\n            self.usrID = usrID",
+        "peekOfCode": "class exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,\n                 filePath: str,\n                 server: str = \"\",\n                 usrID: str = \"\",\n                 pwd: str = \"\",\n                 database: str = \"\",\n                 rename_table: str = \"\"):\n        if not any([server, database, usrID, pwd]):",
         "detail": "build.lib.exceltomysql.exceltomysql",
         "documentation": {}
     },
@@ -74,7 +109,7 @@
         "kind": 5,
         "importPath": "build.lib.exceltomysql.exceltomysql",
         "description": "build.lib.exceltomysql.exceltomysql",
-        "peekOfCode": "hostname = socket.gethostname()\nlocal_ip = socket.gethostbyname(hostname)\n# Pandas to sql need to use sqlalcemy to create engine\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,filePath,server=False,usrID =False,pwd=False,database=False,save2tableName=False):\n        if not any([server,database,usrID,pwd]):\n            raise Exception(\"Partially inputs, please check your inputs...\")\n        else:\n            self.filePath = filePath",
+        "peekOfCode": "hostname = socket.gethostname()\nlocal_ip = socket.gethostbyname(hostname)\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,\n                 filePath: str,\n                 server: str = \"\",\n                 usrID: str = \"\",\n                 pwd: str = \"\",\n                 database: str = \"\",",
         "detail": "build.lib.exceltomysql.exceltomysql",
         "documentation": {}
     },
@@ -83,7 +118,7 @@
         "kind": 5,
         "importPath": "build.lib.exceltomysql.exceltomysql",
         "description": "build.lib.exceltomysql.exceltomysql",
-        "peekOfCode": "local_ip = socket.gethostbyname(hostname)\n# Pandas to sql need to use sqlalcemy to create engine\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,filePath,server=False,usrID =False,pwd=False,database=False,save2tableName=False):\n        if not any([server,database,usrID,pwd]):\n            raise Exception(\"Partially inputs, please check your inputs...\")\n        else:\n            self.filePath = filePath\n            self.server = server",
+        "peekOfCode": "local_ip = socket.gethostbyname(hostname)\nclass exceltoDBtable:\n    #  Available for sql server and mysql now\n    def __init__(self,\n                 filePath: str,\n                 server: str = \"\",\n                 usrID: str = \"\",\n                 pwd: str = \"\",\n                 database: str = \"\",\n                 rename_table: str = \"\"):",
         "detail": "build.lib.exceltomysql.exceltomysql",
         "documentation": {}
     },
