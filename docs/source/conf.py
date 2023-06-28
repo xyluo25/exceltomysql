@@ -10,11 +10,12 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-import os
+from logging import root
 import sys
+from pathlib import Path
 
-sys.path.insert(0, os.path.abspath('../..'))
-sys.path.insert(0, os.path.abspath('../../exceltomysql'))
+# go up one level from /docs/ to the package root
+sys.path.insert(0, str(Path().resolve().parent))
 
 autodoc_mock_imports = [
     "sqlalchemy",
@@ -38,8 +39,10 @@ release = '0.2.1'
 # -- Docstring preprocessing for autodoc
 # autodoc_typehints = "both"
 
-extensions = ['sphinx.ext.autodoc',
-              'sphinx.ext.napoleon']
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
+language = "en"
+root_doc = "index"
+source_suffix = ".rst"
 
 # # Napoleon settings
 # napoleon_google_docstring = True
