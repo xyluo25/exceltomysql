@@ -36,17 +36,9 @@ release = '0.2.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 
 # -- Docstring preprocessing for autodoc
-autodoc_typehints = "both"
+# autodoc_typehints = "both"
 
 extensions = ['sphinx.ext.autodoc',
-              'sphinx.ext.doctest',
-              'sphinx.ext.intersphinx',
-              'sphinx.ext.todo',
-              'sphinx.ext.coverage',
-              'sphinx.ext.mathjax',
-              'sphinx.ext.ifconfig',
-              'sphinx.ext.viewcode',
-              'sphinx.ext.githubpages',
               'sphinx.ext.napoleon']
 
 # # Napoleon settings
@@ -62,7 +54,7 @@ extensions = ['sphinx.ext.autodoc',
 # napoleon_use_param = True
 # napoleon_use_rtype = True
 
-pygments_style = "vs"
+# pygments_style = "vs"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
