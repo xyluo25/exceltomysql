@@ -1,3 +1,5 @@
 pandas
 pymysql
 sqlalchemy
+
+sphinx == 6.*  # same as needs_sphinx in conf.py

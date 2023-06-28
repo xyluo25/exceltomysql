@@ -41,6 +41,7 @@ release = '0.2.1'
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 language = "en"
+needs_sphinx = "6"  # same value as pinned in /docs/requirements.txt
 root_doc = "index"
 source_suffix = ".rst"
 
@@ -60,8 +61,8 @@ source_suffix = ".rst"
 # pygments_style = "vs"
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
-html_static_path = ['_static']
+templates_path = []
+html_static_path = []
 
 html_theme = "sphinx_rtd_theme"
 
