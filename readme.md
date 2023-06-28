@@ -23,7 +23,7 @@ pip install exceltomysql
 # QuickStart
 
 ```python
-import exceltomysq as em
+import exceltomysql as em
 # generate the class instance
 
 # STEP One, prepare your input pareameters
@@ -32,21 +32,21 @@ yourFile  = "test01.xls"  # available for xlsx, xls,csv
 yourUsrID = ""
 yourPWD   = ""
 yourDBname= ""
-save2tableName = False  # save your file name table name onto MySQL Server or A string like: "test"
+save2tableName = ""  # Use your filename as tablename to MySQL Server or user define their prefered table name. e.g. : "test"
 
 # get your local host name
 # this will return your local computer name for your MySQL server database
-host_name = em.hostname   
+host_name = em.hostname
 
-# get your local ip address 
+# get your local ip address
 # this will return your local ip address (if your sql server can be accessed by DNS)
-ip = em.local_ip  
+ip = em.local_ip
 
 yourHostORip  = "localhost"   # you need to change your host if needed, dns: local ip address
 
 
-# STEP Two  convert your data to sql server
-em.exceltoDBtable(yourFile,yourHoseORip,yourUsrID,yourPWD,yourDBname,save2tableName)
+# STEP Two  convert your data to MySQL
+em.exceltoDBtable(yourFile, yourHoseORip, yourUsrID, yourPWD, yourDBname, rename_table)
 
 
 ```
@@ -55,21 +55,21 @@ em.exceltoDBtable(yourFile,yourHoseORip,yourUsrID,yourPWD,yourDBname,save2tableN
 output:
 Successfully load excel data...
 Secessfully connected to MySQL Server...
-Secessfully saved 'yourtable' into SQL Server...
+Secessfully saved 'yourtable' to MySQL Server...
 ```
 
 # API Reference
 
-exceltosqlserver.exceltoDBtable(`filePath,hostORip=False,usrID =False,pwd=False,database=False,save2tableName`)
+exceltosqlserver.exceltoDBtable(`filePath, hostORip ="", usrID = "", pwd = "", database = "", rename_table = ""`)
 
 filePath: str
 
-hostORip: str  default :False
+hostORip: str  default :""
 
-usrID: str  default: False
+usrID: str  default: ""
 
-pwd: str   default: False
+pwd: str   default: ""
 
-database: str  default:False
+database: str  default: ""
 
-save2tableName: str   default:False, will auto save your file name as table name  into mysql database. If assignmed value, will change table name from your file name to the assigned value.
+rename_table: str   default: "",  will auto save your filename as tablename to MySQL Database. If assignmed value, will change tablename from your filename to the assigned value.
