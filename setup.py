@@ -14,7 +14,7 @@ with open("readme.md", "r", encoding="utf-8") as fh:
 try:
     # if have requirements.txt file inside the folder
     with open("requirements.txt", "r", encoding="utf-8") as f:
-        modules_needed = [i.strip() for i in fh.readlines()]
+        modules_needed = [i.strip() for i in f.readlines()]
 except FileNotFoundError:
     modules_needed = []
 
