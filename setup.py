@@ -15,7 +15,7 @@ try:
     # if have requirements.txt file inside the folder
     with open("requirements.txt", "r", encoding="utf-8") as f:
         modules_needed = [i.strip() for i in fh.readlines()]
-except:
+except FileNotFoundError:
     modules_needed = []
 
 setuptools.setup(
