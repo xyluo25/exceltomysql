@@ -6,6 +6,6 @@
 ##############################################################
 
 
-from .exceltomysql import exceltoDBtable
-from .exceltomysql import local_ip
-from .exceltomysql import hostname
+from ._exceltomysql import exceltoDBtable
+from ._exceltomysql import local_ip
+from ._exceltomysql import hostname

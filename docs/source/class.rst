@@ -3,8 +3,10 @@ API Reference
 =============
 
 
-exceltomysql.exceltomysql
-=========================
+exceltomysql._exceltomysql
+---------------------------
 
-.. automodule:: exceltomysql.exceltomysql
+.. automodule:: exceltomysql._exceltomysql
     :members:
+    :private-members:
+    :noindex:
