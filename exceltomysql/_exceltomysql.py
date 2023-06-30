@@ -40,6 +40,19 @@ class exceltoDBtable:
                  pwd="",
                  database="",
                  rename_table=""):
+        """_summary_
+
+        Args:
+            filePath (str): The path of excel/csv file.
+            server (str): The server name of MySQL database.
+            usrID (str): The user ID of MySQL database.
+            pwd (str): The password of MySQL database.
+            database (str): The database name of MySQL database.
+            rename_table (str): The table name of MySQL database. if not given, the table name will be the same as the file name.
+
+        Raises:
+            Exception: If the input is not correct, raise an exception.
+        """
 
         if not any([server, database, usrID, pwd]):
             raise Exception("Partially inputs, please check your inputs...")
@@ -55,6 +68,11 @@ class exceltoDBtable:
         self.save2database()
 
     def connect2DB(self):
+        """Connect to MySQL database.
+
+        Raises:
+            Exception: If the connection is not successful, raise an exception.
+        """
 
         try:
             # self.conn = pymysql.connect(host=self.server,user=self.usrID,password=self.pwd,db=self.database,charset="utf8",cursorclass=pymysql.cursors.DictCursor)
@@ -66,6 +84,12 @@ class exceltoDBtable:
             ) from e
 
     def readData(self):
+        """Read excel/csv file.
+
+        Raises:
+            Exception: If the file is not excel/csv file, raise an exception.
+        """
+
         if self.filePath.split(".")[-1] in ["xlsx", "xls"]:
             self.file_data = pd.read_excel(self.filePath)
             print("Successfully load excel data...")
@@ -76,6 +100,12 @@ class exceltoDBtable:
             raise Exception("Unable to load input file...")
 
     def save2database(self):
+        """Save excel/csv file into MySQL database.
+
+        Raises:
+            Exception: If the saving process is not successful, raise an exception.
+        """
+
         if self.rename_table:
             tableName = self.rename_table
         elif "/" in self.filePath:
@@ -88,3 +118,8 @@ class exceltoDBtable:
             print("Successfully save %s into database..." % tableName)
         except Exception as e:
             raise Exception(e) from e
+
+
+def test_mysql(a, b):
+    """This function is used to test the class exceltoDBtable."""
+    return a + b
