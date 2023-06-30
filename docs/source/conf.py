@@ -13,9 +13,10 @@
 from logging import root
 import sys
 from pathlib import Path
+import os
 
 # go up one level from /docs/ to the package root
-sys.path.insert(0, str(Path().resolve().parent))
+sys.path.insert(0, os.path.abspath('../exceltomysql/'))
 
 autodoc_mock_imports = [
     "sqlalchemy",
@@ -44,6 +45,7 @@ language = "en"
 # needs_sphinx = "6"  # same value as pinned in /docs/requirements.txt
 root_doc = "index"
 source_suffix = ".rst"
+autoclass_content = "both"
 
 # # Napoleon settings
 # napoleon_google_docstring = True
