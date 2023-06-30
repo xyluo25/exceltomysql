@@ -41,7 +41,7 @@ release = '0.2.1'
 
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 language = "en"
-needs_sphinx = "6"  # same value as pinned in /docs/requirements.txt
+# needs_sphinx = "6"  # same value as pinned in /docs/requirements.txt
 root_doc = "index"
 source_suffix = ".rst"
 
