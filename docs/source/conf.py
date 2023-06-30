@@ -11,10 +11,17 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import sys
-import os
+from pathlib import Path
+
+current_dir = Path(__file__).parent.absolute()
+docs_dir = current_dir.parent.absolute()
+home_dir = docs_dir.parent.absolute()
+src_dir = home_dir / "exceltomysql"
+
 
 # go up one level from /docs/ to the package root
-sys.path.insert(0, os.path.abspath('../exceltomysql/'))
+sys.path.insert(0, str(home_dir))
+
 
 autodoc_mock_imports = [
     "sqlalchemy",

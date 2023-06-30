@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Quick Start &#8212; exceltomysql 0.2.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this heading">¶</a></h1>
+<p>In this section, some examples are provided to quickly show how to use utdf2gmns to match movements with synchro signal data.</p>
+<section id="simple-example">
+<h2>Simple Example<a class="headerlink" href="#simple-example" title="Permalink to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">exceltomysql</span> <span class="k">as</span> <span class="nn">em</span>
+<span class="c1"># generate the class instance</span>
+
+<span class="c1"># STEP One, prepare your input pareameters</span>
+
+<span class="n">yourFile</span>  <span class="o">=</span> <span class="s2">&quot;test01.xls&quot;</span>  <span class="c1"># available for xlsx, xls,csv</span>
+<span class="n">yourUsrID</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">yourPWD</span>   <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">yourDBname</span><span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">save2tableName</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>  <span class="c1"># Use your filename as tablename to MySQL Server or user define their prefered table name. e.g. : &quot;test&quot;</span>
+
+<span class="c1"># get your local host name</span>
+<span class="c1"># this will return your local computer name for your MySQL server database</span>
+<span class="n">host_name</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="n">hostname</span>
+
+<span class="c1"># get your local ip address</span>
+<span class="c1"># this will return your local ip address (if your sql server can be accessed by DNS)</span>
+<span class="n">ip</span> <span class="o">=</span> <span class="n">em</span><span class="o">.</span><span class="n">local_ip</span>
+
+<span class="n">yourHostORip</span>  <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>   <span class="c1"># you need to change your host if needed, dns: local ip address</span>
+
+
+<span class="c1"># STEP Two  convert your data to MySQL</span>
+<span class="n">em</span><span class="o">.</span><span class="n">exceltoDBtable</span><span class="p">(</span><span class="n">yourFile</span><span class="p">,</span> <span class="n">yourHoseORip</span><span class="p">,</span> <span class="n">yourUsrID</span><span class="p">,</span> <span class="n">yourPWD</span><span class="p">,</span> <span class="n">yourDBname</span><span class="p">,</span> <span class="n">rename_table</span><span class="p">)</span>
+
+
+<span class="c1"># output:</span>
+<span class="c1"># Successfully load excel data...</span>
+<span class="c1"># Secessfully connected to MySQL Server...</span>
+<span class="c1"># Secessfully saved &#39;yourtable&#39; to MySQL Server...</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">exceltomysql</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#simple-example">Simple Example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="acknowledgement.html">Acknowledgement</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="api.html" title="next chapter">API Reference</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020-2023, Xiangyong Luo.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/quick-start.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

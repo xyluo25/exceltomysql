@@ -6,7 +6,7 @@ exceltomysql
 
 exceltomysql is a tool to convert excel files (.xls, .xlsx, .csv) to mysql database.
 
-**If you use exceltomysql in your research, please cite: https://github.com/xyluo25/exceltomysql**
+**If you use exceltomysql in your research, please cite: https://github.com/xyluo25/exceltomysql **
 
 
 **Package dependencies**
