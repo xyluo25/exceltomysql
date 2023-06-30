@@ -116,21 +116,3 @@ class exceltoDBtable:
             print("Successfully save %s into database..." % tableName)
         except Exception as e:
             raise Exception(e) from e
-
-
-def test_mysql(a: int, b: int) -> int:
-    """add two fnction
-
-    Parameters
-    ----------
-    a : int
-        _description_
-    b : int
-        _description_
-
-    Returns
-    -------
-    int
-        _description_
-    """
-    return a + b

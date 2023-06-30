@@ -3,7 +3,7 @@ API Reference
 =============
 
 
-exceltomysql
+exceltomysql.exceltoDBtable
 ---------------------------
 
 .. .. autoclass:: exceltomysql.exceltoDBtable
@@ -15,6 +15,6 @@ exceltomysql
     :undoc-members:
     :show-inheritance:
 
-
-.. autofunction:: exceltomysql.exceltomysql.test_mysql
-    :noindex:
+..
+.. .. autofunction:: exceltomysql.exceltomysql.test_mysql
+..     :noindex:
