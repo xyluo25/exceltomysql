@@ -2,20 +2,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 
-class exceltoDBtable(object):
+class exceltoDBtable:
     """This class is used to save excel/csv file into MySQL database.
-
-    Args:
-        filePath (str): The path of excel/csv file.
-        server (str): The server name of MySQL database.
-        usrID (str): The user ID of MySQL database.
-        pwd (str): The password of MySQL database.
-        database (str): The database name of MySQL database.
-        rename_table (str): The table name of MySQL database. if not given, the table name will be the same as the file name.
-
-    Returns:
-        None: save local excel/csv file into MySQL database.
-
     """
 
     def __init__(self,
@@ -25,22 +13,33 @@ class exceltoDBtable(object):
                  pwd="",
                  database="",
                  rename_table=""):
-        """_summary_
+        """Initialize the class.
 
-        Args:
-            filePath (str): The path of excel/csv file.
-            server (str): The server name of MySQL database.
-            usrID (str): The user ID of MySQL database.
-            pwd (str): The password of MySQL database.
-            database (str): The database name of MySQL database.
-            rename_table (str): The table name of MySQL database. if not given, the table name will be the same as the file name.
+        Parameters
+        ----------
+        filePath : str
+            The path of excel/csv file.
+        server : str, optional
+            The server name of MySQL database, by default ""
+        usrID : str, optional
+            The user ID of MySQL database, by default ""
+        pwd : str, optional
+            The password of MySQL database, by default ""
+        database : str, optional
+            The database name of MySQL database, by default ""
+        rename_table : str, optional
+            The table name of MySQL database. if not given, the table name will be the same as the file name, by default ""
 
-        Raises:
-            Exception: If the input is not correct, raise an exception.
+        Raises
+        ------
+        an
+            If the input is not correct
+        Exception
+            Input is not correct, please check your input...
         """
 
         if not any([server, database, usrID, pwd]):
-            raise Exception("Partially inputs, please check your inputs...")
+            raise Exception("Input is not correct, please check your input...")
 
         self.filePath = filePath
         self.server = server
@@ -55,8 +54,13 @@ class exceltoDBtable(object):
     def connect2DB(self):
         """Connect to MySQL database.
 
-        Raises:
-            Exception: If the connection is not successful, raise an exception.
+        Raises
+        ------
+        an
+            If the connection is not successful, raise an exception.
+        Exception
+            Can not connect to MySQL, please check your input info.
+
         """
 
         try:
@@ -71,8 +75,13 @@ class exceltoDBtable(object):
     def readData(self):
         """Read excel/csv file.
 
-        Raises:
-            Exception: If the file is not excel/csv file, raise an exception.
+        Raises
+        ------
+        an
+            If the file is not excel or csv file, raise an exception.
+        Exception
+            Unable to load input file...
+
         """
 
         if self.filePath.split(".")[-1] in ["xlsx", "xls"]:
@@ -87,8 +96,12 @@ class exceltoDBtable(object):
     def save2database(self):
         """Save excel/csv file into MySQL database.
 
-        Raises:
-            Exception: If the saving process is not successful, raise an exception.
+        Raises
+        ------
+        an
+            If the table name is not given, raise an exception.
+        Exception
+            Please give the table name...
         """
 
         if self.rename_table:
