@@ -3,8 +3,8 @@ API Reference
 =============
 
 
-exceltomysql._exceltomysql
+exceltomysql
 ---------------------------
 
-.. automodule:: _exceltomysql
+.. autuclass:: exceltomysql.exceltoDBtable
     :members:
