@@ -3,8 +3,8 @@ API Reference
 =============
 
 
-exceltomysql
+exceltomysql.exceltoDBtable
 ---------------------------
 
-.. autuclass:: exceltomysql.exceltoDBtable
+.. autuclass:: exceltomysql
     :members:

@@ -10,9 +10,7 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-from logging import root
 import sys
-from pathlib import Path
 import os
 
 # go up one level from /docs/ to the package root
@@ -44,8 +42,7 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.napoleon']
 language = "en"
 # needs_sphinx = "6"  # same value as pinned in /docs/requirements.txt
 root_doc = "index"
-source_suffix = ".rst"
-autoclass_content = "both"
+source_suffix = {'.rst': 'restructuredtext'}
 
 # # Napoleon settings
 # napoleon_google_docstring = True
@@ -66,68 +63,7 @@ autoclass_content = "both"
 templates_path = []
 html_static_path = []
 
-html_theme = "sphinx_rtd_theme"
+# html_theme = "sphinx_rtd_theme"
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
-
-
-# def process_signature(app, what, name, obj, options, signature, return_annotation):
-#     """Replace the create_env keyword argument accepted by decorated mods with
-#     the parameters added by the decorator"""
-#
-#     if what in ["function", "method"] and hasattr(obj, "_decorated_mod"):
-#         if "create_env" not in signature:
-#             raise ValueError(
-#                 f"Decorated mod {name} does not accept create_env")
-#         new_signature = signature.replace(
-#             "create_env", "verbose=True, logfile=None, solver_params=None"
-#         )
-#         print(f"Modified signature of {name}")
-#         return new_signature, return_annotation
-#
-#     return signature, return_annotation
-#
-# boilerplate = """
-#     **verbose** : :ref:`bool <python:bltin-boolean-values>`, optional
-#         ``verbose=False`` suppresses all console output
-#
-#     **logfile** : :class:`python:str`, optional
-#         Write all mod output to the given file path
-#
-#     **solver_params** : :class:`python:dict`, optional
-#         Gurobi parameters to be passed to the solver"""
-# boilerplate = boilerplate.split("\n")
-#
-#
-# def process_docstring(app, what, name, obj, options, lines):
-#     """Add parameter entries for decorated mods"""
-#
-#     if what in ["function", "method"] and hasattr(obj, "_decorated_mod"):
-#         # Find where the last input parameter is listed
-#         in_paramlist = False
-#         lineno = None
-#         for i, line in enumerate(lines):
-#             if ":Parameters:" in line:
-#                 in_paramlist = True
-#             elif in_paramlist and (
-#                 ":Returns:" in line or "processed by numpydoc" in line
-#             ):
-#                 lineno = i - 1
-#                 break
-#
-#         if lineno is None:
-#             raise ValueError(f"Failed to find param list for {name}")
-#
-#         # Insert boilerplate bits
-#         for line in reversed(boilerplate):
-#             lines.insert(lineno, line)
-#
-#     if what == "module":
-#         lines.append("")
-#         lines.append(f"The following mods can be imported from ``{name}``:")
-#
-#
-# def setup(app):
-#     app.connect("autodoc-process-signature", process_signature)
-#     app.connect("autodoc-process-docstring", process_docstring)
