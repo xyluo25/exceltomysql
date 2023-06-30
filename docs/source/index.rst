@@ -42,10 +42,10 @@ Contents
 ====================================
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   installation
-   quick-start
-   class
-   acknowledgement
+    installation
+    quick-start
+    api
+    acknowledgement
 

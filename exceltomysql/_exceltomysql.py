@@ -1,23 +1,8 @@
-# -*- coding:utf-8 -*-
-##############################################################
-# Created Date: Monday, December 28th 2020
-# Contact Info: luoxiangyong01@gmail.com
-# Author/Copyright: Mr. Xiangyong Luo
-##############################################################
-
-
-import socket
-
 import pandas as pd
-import pymysql
-import pyodbc
 from sqlalchemy import create_engine
 
-hostname = socket.gethostname()
-local_ip = socket.gethostbyname(hostname)
 
-
-class exceltoDBtable:
+class exceltoDBtable(object):
     """This class is used to save excel/csv file into MySQL database.
 
     Args:
@@ -118,8 +103,3 @@ class exceltoDBtable:
             print("Successfully save %s into database..." % tableName)
         except Exception as e:
             raise Exception(e) from e
-
-
-def test_mysql(a, b):
-    """This function is used to test the class exceltoDBtable."""
-    return a + b
