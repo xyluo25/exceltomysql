@@ -11,3 +11,4 @@ beautifulsoup4
 requests
 urllib3
 sphinx
+exceltomysql
