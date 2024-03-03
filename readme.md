@@ -23,16 +23,15 @@ pip install exceltomysql
 # QuickStart
 
 ```python
-import exceltomysql as em
-# generate the class instance
+from exceltomysql import ExcelToDB
 
-# STEP One, prepare your input pareameters
+# Step 1, prepare your input pareameters
 
 yourFile  = "test01.xls"  # available for xlsx, xls,csv
 yourUsrID = ""
 yourPWD   = ""
 yourDBname= ""
-save2tableName = ""  # Use your filename as tablename to MySQL Server or user define their prefered table name. e.g. : "test"
+rename_table = ""  # Use your filename as tablename to MySQL Server or user define their prefered table name. e.g. : "test"
 
 # get your local host name
 # this will return your local computer name for your MySQL server database
@@ -40,16 +39,15 @@ host_name = em.hostname
 
 # get your local ip address
 # this will return your local ip address (if your sql server can be accessed by DNS)
-ip = em.local_ip
+IP = em.local_ip
+yourHostOrIP  = "localhost"   # you need to change your host if needed, dns: local ip address
 
-yourHostORip  = "localhost"   # you need to change your host if needed, dns: local ip address
-
-
-# STEP Two  convert your data to MySQL
-em.exceltoDBtable(yourFile, yourHoseORip, yourUsrID, yourPWD, yourDBname, rename_table)
-
+# Step 2, save your data onto MySQL
+ex = ExcelToDB(yourFile, yourHoseOrIP, yourUsrID, yourPWD, yourDBname, rename_table)
+ex.save2db()
 
 ```
+
 
 ```python
 output:
@@ -60,7 +58,7 @@ Secessfully saved 'yourtable' to MySQL Server...
 
 # API Reference
 
-exceltosqlserver.exceltoDBtable(`filePath, hostORip ="", usrID = "", pwd = "", database = "", rename_table = ""`)
+exceltomysql.ExcelToDB(`filePath, host_ip ="", usrID = "", pwd = "", db_name = "", rename_table = ""`)
 
 filePath: str
 
@@ -70,6 +68,6 @@ usrID: str  default: ""
 
 pwd: str   default: ""
 
-database: str  default: ""
+db_name: str  default: ""
 
 rename_table: str   default: "",  will auto save your filename as tablename to MySQL Database. If assignmed value, will change tablename from your filename to the assigned value.

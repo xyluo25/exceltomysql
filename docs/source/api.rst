@@ -3,7 +3,7 @@ API Reference
 =============
 
 
-exceltomysql.exceltoDBtable
+exceltomysql.ExcelToDB
 ---------------------------
 
 .. .. autoclass:: exceltomysql.exceltoDBtable
@@ -11,7 +11,7 @@ exceltomysql.exceltoDBtable
 ..
 
 .. automodule:: exceltomysql.exceltomysql
-    :members: exceltoDBtable
+    :members: ExcelToDB
     :undoc-members:
     :show-inheritance:
 

@@ -8,7 +8,7 @@
 
 import setuptools
 
-with open("readme.md", "r", encoding="utf-8") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 try:
@@ -19,8 +19,8 @@ except FileNotFoundError:
     modules_needed = []
 
 setuptools.setup(
-    name="exceltomysql", # Replace with your own username
-    version="0.2.2",
+    name="exceltomysql",  # Replace with your own username
+    version="0.2.3",
     author="Xiangyong Luo",
     author_email="rochemay@163.com",
     description="This package help convert your excel files (xlsx,xls,csv) to MySQL Database.",
@@ -33,7 +33,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.10',
     install_requires=modules_needed,
 
     packages=setuptools.find_packages(),

@@ -3,7 +3,7 @@ Installation
 
 You can install the latest release of exceltomysql at `PyPI`_ via `pip`_:
 
-.. code-block:: bash
+.. code-block:: python
 
     pip install exceltomysql
 

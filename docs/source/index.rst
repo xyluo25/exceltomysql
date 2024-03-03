@@ -14,6 +14,7 @@ exceltomysql is a tool to convert excel files (.xls, .xlsx, .csv) to mysql datab
 
 * [X] sqlalchemy
 * [X] pandas
+* [X] pymysql
 
 
 **Call for Contributions**

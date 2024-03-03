@@ -25,16 +25,19 @@ sys.path.insert(0, str(home_dir))
 
 autodoc_mock_imports = [
     "sqlalchemy",
-    "pandas"
+    "pandas",
+    "pymysql",
+    "socket",
+    "pyufunc"
 ]
 
 # -- Project information -----------------------------------------------------
 project = 'exceltomysql'
-copyright = '2020-2023, Xiangyong Luo'
+copyright = '2020-, Xiangyong Luo'
 author = 'Xiangyong Luo'
 
 # The full version, including alpha/beta/rc tags
-release = '0.2.1'
+release = '0.2.3'
 
 
 # -- General configuration ---------------------------------------------------
