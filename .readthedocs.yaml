@@ -9,13 +9,6 @@ build:
       - pip install -r requirements_dev.txt
       - pip install sphinx
 
-python:
-  # Install our python package before building the docs
-  install:
-    - requirements: requirements_dev.txt
-    - method: pip
-      path: .
-
 sphinx:
   configuration: docs/source/conf.py
 
